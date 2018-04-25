@@ -9,3 +9,6 @@ Calculate the throat area A_t, the exit area A_e, the thrust coefficient C_f, an
 
 ## Exercise 3
 Calculate the Delta V and the propellant mass m_p  necessary to perform a Hohmann orbital transfer from a GEO orbit to a h = 600 km height circular orbit. How long do the apogee and perigee manoeuvres last? The initial spacecraft mass is m_0 = 100 kg, the specific impulse is Isp = 318s and the mass flow rate of the thruster is mdot_p = 0.135 kg/s.
+
+## Exercise 4
+A monopropellant thruster is qualified for operating with an inlet propellant pressure within the range 6.0 MPa - 2.0 MPa. Calculate the mass and the volume of the pressurant gas (Nitrogen, molecular mass = 28) at begin and end of life for a blow-down pressurization system, where both pressurizing gas and propellant are in the same tank. The total mass of Hydrazine stored in the tank at BOL is 20kg (density =1.02g/cm^3) and the spacecraft temperature during the mission is required to be within the range 283K - 303K. 
