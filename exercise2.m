@@ -18,7 +18,7 @@ Pe = Pa; % The nozzle is ideally expanded.
 R = gas_constant / M; 
 
 % Big Gamma.
-Gamma = sqrt(gamma * (2 / (gamma+1)) * ((gamma+1) / (gamma-1)));
+Gamma = sqrt(gamma * (2 / (gamma+1))^((gamma+1)/(gamma-1)));
 
 % Characteristic Velocity (m/s).
 cstar = sqrt(R*Tc) / Gamma
@@ -36,8 +36,8 @@ Cf = ue / cstar
 % Throat area %
 %-------------%
 % Mach number.
-Me = ue / sqrt(gamma * R * T)
-Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1))
+Me = ue / sqrt(gamma * R * T);
+Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1));
 
 % Throat area (m^2).
 At = T / (Pc * Cf)
