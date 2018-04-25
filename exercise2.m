@@ -35,10 +35,6 @@ Cf = ue / cstar
 %-------------%
 % Throat area %
 %-------------%
-% Find Pc, the pressure in the chamber (Pascal).
-%syms x
-%eqnPc = ue == sqrt(((2*gamma*R*Tc) / (gamma-1)) * (1-(Pe/x)^((gamma-1)/gamma) ));
-%Pc = solve(eqnPc, x);
 % Mach number.
 Me = ue / sqrt(gamma * R * T)
 Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1))
@@ -49,11 +45,6 @@ At = T / (Pc * Cf)
 %-----------%
 % Exit area %
 %-----------%
-%Pc = 5.2605e+06;
-%syms y
-%eqnAe = Cf == Gamma * sqrt(((2*gamma)/(gamma-1)) * (1 - (Pe/Pc)^((gamma-1)/gamma))) + y/At * (Pe/Pc - Pa/Pc);
-%Ae = solve(eqnAe, y)
-
 % Find Ae using Area Ratio formula.
 Ae = (At/Me) * ((1 + (gamma-1)/2 * Me^2) / (1 + (gamma-1)/2))^((gamma+1)/(2*(gamma-1)))
 
