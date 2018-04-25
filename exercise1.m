@@ -1,9 +1,12 @@
-g = 9.81;  % gravitational acceleration near Earth's surface (m/s).
+clearvars
+clc
 
-cstar = 1220; % characteristic velocity.
-Cf = 1.5; % thrust coefficient.
-mdot_p = 73; % mass flow rate in Kg/s.
-At = 0.0248; % throat area m^2.
+g = 9.81; % Gravitational acceleration near Earth's surface (m/s).
+
+cstar = 1220; % Characteristic velocity.
+Cf = 1.5; % Thrust coefficient.
+mdot_p = 73; % Mass flow rate in Kg/s.
+At = 0.0248; % Throat area m^2.
 
 % The effective exhaust velocity (m/s).
 ue = cstar * Cf

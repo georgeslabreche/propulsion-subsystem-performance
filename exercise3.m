@@ -1,3 +1,6 @@
+clearvars
+clc
+
 % Orbital parameters.
 r_earth = physconst('EarthRadius') / 1e3; % Earth's radius (km).
 u_earth =  398600; % Earth's standard gravitational parameter (km^3.s^-2).
@@ -7,7 +10,7 @@ r_geo = r_earth + h_geo;
 r_final = r_earth + h_final;
 
 % Propulsion parameters
-g = 9.81 / 1000;  % gravitational acceleration near Earth's surface (km/s).
+g = 9.81 / 1000; % Gravitational acceleration near Earth's surface (km/s).
 m_i = 100; % Initial spacecraft mass (kg).
 Isp = 300; % Specific impulse (seconds).
 mdot_p = 0.135; % Mass flow rate of the thruster (kg/s).
@@ -22,6 +25,7 @@ v_geo = sqrt(u_earth / r_geo);
 v_p = v_geo * sqrt((2 * r_final) / (r_geo + r_final));
 
 % Delta-V
+% Negative because needs to be applied against the veolocity vector.
 DeltaV_1 = v_p - v_geo % km/s.
 
 %----------------------------%
@@ -34,6 +38,7 @@ v_a = sqrt(u_earth / r_final) *  sqrt((2 * r_geo) / (r_geo + r_final));
 v_f = sqrt(u_earth / r_final);
 
 % Delta-V
+% Negative because needs to be applied against the veolocity vector.
 DeltaV_2 = v_f - v_a % km/s.
 
 %---------------%
