@@ -70,9 +70,9 @@ m_p_DeltaV_Tot = m_p_DeltaV_1 + m_p_DeltaV_2
 % Propellant left after both maneuvers (kg).
 m_p_left_Tot = m_i - m_p_DeltaV_Tot
 
-%---------------%
-% Maneuver Time %
-%---------------%
+%----------------------%
+% Bonus: Maneuver Time %
+%----------------------%
 % For first maneuver:
 t_m_DeltaV_1 = m_p_DeltaV_1 / mdot_p / 60 % minutes.
 
@@ -82,9 +82,9 @@ t_m_DeltaV_2 = m_p_DeltaV_2 / mdot_p  / 60 % minutes.
 % For both maneuvers:
 t_m_Tot = t_m_DeltaV_1 + t_m_DeltaV_2 % minutes.
 
-%---------------%
-% Transfer Time %
-%---------------%
+%----------------------%
+% Bonus: Transfer Time %
+%----------------------%
 % The transfer time is half of the transfer orbital period
 
 % Semi-major axis of the transfer orbit.

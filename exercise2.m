@@ -26,7 +26,7 @@ cstar = sqrt(R*Tc) / Gamma
 %--------------------%
 % Thrust Coefficient %
 %--------------------%
-% The effective exhaust velocity (m/a).
+% The effective exhaust velocity (m/s).
 ue = Isp * g;
 
 % Thrust coefficient.
@@ -38,7 +38,7 @@ Cf = ue / cstar
 % Mach number.
 Me = ue / sqrt(gamma * R * T);
 
-% Pressure in chamber.
+% Pressure in chamber (Pa).
 Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1));
 
 % Throat area (m^2).
@@ -47,7 +47,7 @@ At = T / (Pc * Cf)
 %-----------%
 % Exit area %
 %-----------%
-% Find Ae using Area Ratio formula.
+% Find Ae using Area Ratio formula (m^2).
 Ae = (At/Me) * ((1 + (gamma-1)/2 * Me^2) / (1 + (gamma-1)/2))^((gamma+1)/(2*(gamma-1)))
 
 %-----------------------%
