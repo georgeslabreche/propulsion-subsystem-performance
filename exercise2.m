@@ -37,6 +37,8 @@ Cf = ue / cstar
 %-------------%
 % Mach number.
 Me = ue / sqrt(gamma * R * T);
+
+% Pressure in chamber.
 Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1));
 
 % Throat area (m^2).
