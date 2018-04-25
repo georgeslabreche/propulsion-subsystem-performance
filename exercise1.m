@@ -1,6 +1,3 @@
-clearvars
-clc
-
 g = 9.81;  % gravitational acceleration near Earth's surface (m/s).
 
 cstar = 1220; % characteristic velocity.
@@ -17,5 +14,5 @@ Isp = ue / g
 % Thrust (Newton).
 T = mdot_p * cstar * Cf
 
-% The pressure in the combustion chamber.
+% The pressure in the combustion chamber (Pascal).
 Pc = T / (Cf * At)

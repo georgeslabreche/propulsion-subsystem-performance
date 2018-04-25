@@ -1,6 +1,3 @@
-clearvars
-clc
-
 % Orbital parameters.
 r_earth = physconst('EarthRadius') / 1e3; % Earth's radius (km).
 u_earth =  398600; % Earth's standard gravitational parameter (km^3.s^-2).
