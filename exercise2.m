@@ -35,11 +35,16 @@ Cf = ue / cstar
 %-------------%
 % Throat area %
 %-------------%
-% Mach number.
-Me = ue / sqrt(gamma * R * T);
+% Pressure in the chamber (Pa).
+syms x
+eqnPc = ue == sqrt(2 * gamma/(gamma-1) * R * Tc * (1 - (Pe/x)^((gamma-1)/gamma)));
+Pc = double(solve(eqnPc, x));
+
+% Temperature at exit of Nozzle (K)
+Te = Tc / (Pc / Pe)^((gamma-1)/2);
 
 % Pressure in chamber (Pa).
-Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1));
+%Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1));
 
 % Throat area (m^2).
 At = T / (Pc * Cf)
@@ -47,6 +52,9 @@ At = T / (Pc * Cf)
 %-----------%
 % Exit area %
 %-----------%
+% Mach number.
+Me = ue / sqrt(gamma * R * Te);
+
 % Find Ae using Area Ratio formula (m^2).
 Ae = (At/Me) * ((1 + (gamma-1)/2 * Me^2) / (1 + (gamma-1)/2))^((gamma+1)/(2*(gamma-1)))
 
