@@ -40,18 +40,15 @@ syms x
 eqnPc = ue == sqrt(2 * gamma/(gamma-1) * R * Tc * (1 - (Pe/x)^((gamma-1)/gamma)));
 Pc = double(solve(eqnPc, x));
 
-% Temperature at exit of Nozzle (K)
-Te = Tc / (Pc / Pe)^((gamma-1)/2);
-
-% Pressure in chamber (Pa).
-%Pc = Pe * (1+ (gamma-1)/2 * Me^2)^(1/(gamma-1));
-
 % Throat area (m^2).
 At = T / (Pc * Cf)
 
 %-----------%
 % Exit area %
 %-----------%
+% Temperature at exit of Nozzle (K)
+Te = Tc / (Pc / Pe)^((gamma-1)/2);
+
 % Mach number.
 Me = ue / sqrt(gamma * R * Te);
 
