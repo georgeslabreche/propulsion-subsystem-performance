@@ -67,12 +67,9 @@ m_p_left_2 = m_p_left_1 - m_p_DeltaV_2
 % Propellant used for both maneuvers (kg).
 m_p_DeltaV_Tot = m_p_DeltaV_1 + m_p_DeltaV_2
 
-% Propellant left after both maneuvers (kg).
-m_p_left_Tot = m_i - m_p_DeltaV_Tot
-
-%----------------------%
-% Bonus: Maneuver Time %
-%----------------------%
+%---------------%
+% Maneuver Time %
+%---------------%
 % For first maneuver:
 t_m_DeltaV_1 = m_p_DeltaV_1 / mdot_p / 60 % minutes.
 
