@@ -14,11 +14,9 @@ N2H4_density_bol = 1020; % kg/m^3
 N2H4_vol = N2H4_mass_bol / N2H4_density_bol; % m^3
 
 % Specific gas constant of the pressurant gas.
-R_gas = gas_constant / mm_N;
+R_gas = (gas_constant / (mm_N / 1000)); % J/K.kg
 
-%--------%
-% At EOL %
-%--------%
+
 % Tank pressure at EOL.
 % Assumed to being the lowest acceptable thruster inlet pressure.
 P_eol = 2e6; % Pa
@@ -34,15 +32,7 @@ T_eol = 283; % K
 d_eol = (P_eol * mm_N) / (gas_constant *  T_eol); % g/m^3
 d_eol = d_eol / 1000 % kg/m^3
 
-% The pressurant gass mass.
-M_gas_eol = (P_eol*N2H4_vol) / (R_gas*T_eol - P_eol/d_eol) % Kg
 
-% Determing the pressure tank volume from mass and gas density.
-V_press_eol = M_gas_eol/d_eol % Unit? m^3?
-
-%--------%
-% At BOL %
-%--------%
 % Tank pressure at BOL.
 % Assumed to being the lowest acceptable thruster inlet pressure.
 P_bol = 6e6; % Pa
@@ -51,12 +41,23 @@ P_bol = 6e6; % Pa
 % Assumed to be the lowest operating temperature of the tanks.
 T_bol = 303; % K
 
-% Density at BOL.
+% Density at BOL (i.e. maximum density)
 d_bol = (P_bol * mm_N) / (gas_constant *  T_bol); % g/m^3
 d_bol = d_bol / 1000 % kg/m^3
 
-% The pressurant gass mass.
-M_gas_bol = (P_eol*N2H4_vol) / (R_gas*T_bol - P_bol/d_bol) % Kg
+
+%------------------------%
+% Mass and volume at EOL %
+%------------------------%
+% The pressurant gass mass. Use maximum density.
+M_gas_eol = (P_eol*N2H4_vol) / ((R_gas*T_eol) - (P_eol/d_bol)) % Kg
 
 % Determing the pressure tank volume from mass and gas density.
-V_press_bol = M_gas_bol/d_bol % Unit? m^3?
+V_press_eol = M_gas_eol/d_eol % m^3
+
+%--------------%
+% Vlume at BOL %
+%--------------%
+
+% Determing the pressure tank volume from mass and gas density.
+V_press_bol = N2H4_mass_bol/d_bol % m^3
